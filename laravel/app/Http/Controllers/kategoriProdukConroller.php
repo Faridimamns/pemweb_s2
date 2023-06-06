@@ -1,27 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Produk;
-use App\Models\KategoriProduk;
-// use db;
+
 use Illuminate\Support\Facades\DB;
+use App\Models\KategoriProduk;
 
 use Illuminate\Http\Request;
 
-class ProdukConroller extends Controller
+class kategoriProdukConroller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produk = DB::table('produk')
-        ->join('kategori_produk', 'produk.kategori_produk_id', '=',
-        'kategori_produk.id')
-        ->select('produk.*', 'kategori_produk.nama as nama_kategori')
+        $kategoriProduk = DB::table('kategori_produk')
         ->get();
-        return view('admin.produk.index', compact('produk'));
-        // compact sebagai mgnumpulkan membuat array yang ingin di panggil dalam view
+        return view('admin.kategoriProduk.index', compact('kategoriProduk'));
     }
 
     /**
