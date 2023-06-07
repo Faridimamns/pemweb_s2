@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardConroller;
 use App\Http\Controllers\ProdukConroller;
 use App\Http\Controllers\kategoriProdukConroller;
+use App\Http\Controllers\pesananController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +26,4 @@ Route::get('/', function () {
 Route::get('/dashboard',[DashboardConroller::class, 'index' ]);
 Route::get('/produk',[ProdukConroller::class, 'index' ]);
 Route::get('/kategoriProduk',[kategoriProdukConroller::class, 'index' ]);
+Route::get('/pesanan',[pesananController::class, 'index' ]);
