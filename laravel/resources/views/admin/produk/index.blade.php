@@ -15,8 +15,8 @@
     </div>
     <div class="card mb-4">
         <div class="card-header">
-            <i class="fas fa-table me-1"></i>
-            DataTable Example
+            <a href="{{url('/produk/create')}}"
+            class="btn btn-sm btn-outline-dark">TAMBAH</a>
         </div>
         <div class="card-body">
             <table id="datatablesSimple">
@@ -31,6 +31,7 @@
                         <th>minimal stok</th>
                         <th>deskripsi</th>
                         <th>kategori produk</th>
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -44,6 +45,7 @@
                         <th>minimal stok</th>
                         <th>deskripsi</th>
                         <th>kategori produk</th>
+                        <th>action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -59,6 +61,15 @@
                         <td>{{$p->min_stok}}</td>
                         <td>{{$p->deskripsi}}</td>
                         <td>{{$p->nama_kategori}}</td>
+                        <td>
+                            <a href="{{url('produk/edit/'.$p->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-sm btn-outline-danger">Hapus</a>
+                        </td>
+                        <td>
+                            <a href="" class="btn btn-sm btn-outline-warning">view</a>
+                        </td>
                     </tr>
 
                     @php

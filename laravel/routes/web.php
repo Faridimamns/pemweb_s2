@@ -24,6 +24,18 @@ Route::get('/', function () {
 
 //route dashboard
 Route::get('/dashboard',[DashboardConroller::class, 'index' ]);
+
+
 Route::get('/produk',[ProdukConroller::class, 'index' ]);
+Route::get('/produk/create',[ProdukConroller::class, 'create' ]);
+Route::post('/produk/store',[ProdukConroller::class, 'store' ]);
+Route::get('/produk/edit/{id}',[ProdukConroller::class, 'edit' ]);
+Route::post('/produk/update',[ProdukConroller::class, 'update' ]);
+
+
 Route::get('/kategoriProduk',[kategoriProdukConroller::class, 'index' ]);
+Route::get('/kategoriProduk/create',[kategoriProdukConroller::class, 'create' ]);
+Route::get('/kategoriProduk/create',[kategoriProdukConroller::class, 'store' ]);
+
+
 Route::get('/pesanan',[pesananController::class, 'index' ]);
