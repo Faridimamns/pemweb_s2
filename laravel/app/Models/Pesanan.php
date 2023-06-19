@@ -23,4 +23,5 @@ class Pesanan extends Model
     public function produk(){
         return $this->belongsTo(Produk::class);
     }
+    
 }
