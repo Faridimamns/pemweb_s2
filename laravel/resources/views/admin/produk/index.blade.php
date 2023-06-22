@@ -1,5 +1,6 @@
 @extends('admin.layout.appadmin')
 @section('content')
+@if(Auth::user()->role != 'pelanggan')
 <div class="container-fluid px-4">
     <h1 class="mt-4">Tables</h1>
     <ol class="breadcrumb mb-4">
@@ -14,10 +15,12 @@
         </div>
     </div>
     <div class="card mb-4">
+        @if(Auth::user()->role == 'admin')
         <div class="card-header">
             <a href="{{url('/produk/create')}}"
             class="btn btn-sm btn-outline-dark">TAMBAH</a>
         </div>
+        @endif
         <div class="card-body">
             <table id="datatablesSimple">
                 <thead>
@@ -82,4 +85,7 @@
         </div>
     </div>
 </div>
+@else
+@include('admin.access_denied')
+@endif
 @endsection
