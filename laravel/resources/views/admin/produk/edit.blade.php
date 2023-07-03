@@ -9,6 +9,7 @@
 <form action="{{url('produk/update')}}" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     @foreach ($produk as $p)
+    
     <input type="hidden" name="id" value="{{$p->id}}">
 
     <div class="form-group row">

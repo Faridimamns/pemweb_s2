@@ -21,11 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/after_register', function(){
+    return view('after_register');
+});
+Route::get('/dashboard',[DashboardConroller::class, 'index' ]);
 
 //route dashboard
-Route::group(['middleware' => ['auth']], function(){
-
-    Route::get('/dashboard',[DashboardConroller::class, 'index' ]);
+Route::group(['middleware' => ['auth', 'role : admin-manager']], function(){
 
 
     Route::get('/produk',[ProdukConroller::class, 'index' ]);

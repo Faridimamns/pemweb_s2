@@ -11,7 +11,9 @@
     <div class="form-group row">
         <label for="text" class="col-4 col-form-label">KODE</label>
         <div class="col-5">
-            <input id="text" name="kode" type="text" class="form-control">
+            
+
+            <input id="text" name="kode" type="text" class="form-control" >
         </div>
     </div>
     <div class="form-group row">
@@ -38,7 +40,7 @@
             <input id="text4" name="stok" type="text" class="form-control">
         </div>
     </div>
-    
+
     <div class="form-group row">
         <label for="text5" class="col-4 col-form-label">MINIMAL STOK</label>
         <div class="col-5">
@@ -55,9 +57,9 @@
         <label for="select" class="col-4 col-form-label">KATEGORI PRODUK</label>
         <div class="col-5">
             <select id="select" name="kategori_produk_id" class="custom-select">
-            @foreach($kategori_produk as $kp)    
-            <option value="{{$kp->id}}">{{$kp->nama}}</option>
-            @endforeach
+                @foreach($kategori_produk as $kp)
+                <option value="{{$kp->id}}">{{$kp->nama}}</option>
+                @endforeach
             </select>
         </div>
     </div>
